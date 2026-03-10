@@ -25,6 +25,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -68,7 +69,9 @@ class MainActivity : ComponentActivity() {
                     onClick = {
                         val intent = Intent(this@MainActivity, SpankService::class.java)
                         if (isActive) {
-                            unbindService(connection)
+                            try {
+                                unbindService(connection)
+                            } catch (e: Exception) {}
                             stopService(intent)
                         } else {
                             startForegroundService(intent)
