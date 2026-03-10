@@ -1,0 +1,21 @@
+# Android
+android-app/app/build/
+android-app/build/
+android-app/.gradle/
+*.apk
+*.aar
+
+# Go
+bin/
+pkg/
+vendor/
+spank-master/bin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.idea/
+.vscode/
